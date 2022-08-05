@@ -10,7 +10,6 @@ import {
 } from "@chakra-ui/react";
 import Image from "next/image";
 import { FC } from "react";
-import ImageArrow from "../../public/image/Sketch-annotation-element-stroke-line-arrow-spiral-down-5.svg";
 import { RiSearch2Line } from "react-icons/ri";
 import ImageHeroSection from "../../public/image/main/Rectangle 2.png";
 
@@ -31,7 +30,7 @@ const HeroSections: FC = () => {
           alignItems="center"
           flexDir="column"
         >
-          <Box maxW={{ base: "100%", md: "55em" }}>
+          <Box maxW={{ base: "100%", sm: "100%", md: "55em" }}>
             <Heading variant={{ base: "H3+", sm: "H1", md: "H1" }}>
               Discover Furniture With High Quality Wood
             </Heading>
@@ -44,24 +43,25 @@ const HeroSections: FC = () => {
           </Box>
         </Box>
         <Box pos="relative" mt="5rem">
-          <Image src={ImageHeroSection} />
           <Flex
             w={{ base: "100%", md: "50%" }}
             bg="screen-color"
             p="1rem"
-            boxShadow="0px 4px 80px rgba(175, 173, 181, 1)"
+            boxShadow="0px 4px 80px rgba(175, 173, 181, 0.4)"
             position={{ base: "static", md: "absolute" }}
             zIndex={10}
             top="-2.5rem"
             left="25%"
+            mb={{ base: 8, md: 0 }}
           >
             <InputGroup>
               <InputLeftElement
+                color="paragraph-color"
                 pos="absolute"
                 fontSize="2rem"
-                children={<RiSearch2Line />}
-                color="paragraph-color"
-              />
+              >
+                <RiSearch2Line />
+              </InputLeftElement>
               <Input
                 type="text"
                 variant="unstyled"
@@ -71,8 +71,11 @@ const HeroSections: FC = () => {
                 _placeholder={{ color: "paragraph-color" }}
               />
             </InputGroup>
-            <Button variant="primary">Search</Button>
+            <Button variant="primary" size={{ base: "sm", md: "md" }}>
+              Search
+            </Button>
           </Flex>
+          <Image src={ImageHeroSection} alt="Image Hero sectios" />
         </Box>
       </Box>
     </Flex>

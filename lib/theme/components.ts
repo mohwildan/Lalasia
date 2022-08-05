@@ -3,17 +3,17 @@ import { ComponentStyleConfig } from "@chakra-ui/react";
 export const Button: ComponentStyleConfig = {
   sizes: {
     md: {
-      color: "#fff",
+      py: "1.5rem",
+      px: "3rem",
     },
-    lg: {
-      color: "#ddd",
+    sm: {
+      py: "1.3rem",
+      px: "2.5rem",
     },
   },
   variants: {
     primary: {
       bg: "main-color",
-      py: "1.5rem",
-      px: "3rem",
       color: "screen-color",
     },
   },
