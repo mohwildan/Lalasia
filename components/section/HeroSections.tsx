@@ -15,13 +15,7 @@ import ImageHeroSection from "../../public/image/main/Rectangle 2.png";
 
 const HeroSections: FC = () => {
   return (
-    <Flex
-      h="100vh"
-      pt="9rem"
-      justifyContent="center"
-      align="center"
-      position="relative"
-    >
+    <Flex pt="9rem">
       <Box>
         <Box
           display="flex"
@@ -42,11 +36,11 @@ const HeroSections: FC = () => {
             </Text>
           </Box>
         </Box>
-        <Box pos="relative" mt="5rem">
+        <Box pos="relative" mt={{ base: "3rem", md: "5rem" }}>
           <Flex
             w={{ base: "100%", md: "50%" }}
             bg="screen-color"
-            p="1rem"
+            p={{ base: "0.5rem", md: "1rem" }}
             boxShadow="0px 4px 80px rgba(175, 173, 181, 0.4)"
             position={{ base: "static", md: "absolute" }}
             zIndex={10}
@@ -58,7 +52,7 @@ const HeroSections: FC = () => {
               <InputLeftElement
                 color="paragraph-color"
                 pos="absolute"
-                fontSize="2rem"
+                fontSize={{ base: "1.3rem", md: "2rem" }}
               >
                 <RiSearch2Line />
               </InputLeftElement>
@@ -69,6 +63,7 @@ const HeroSections: FC = () => {
                 h="full"
                 w="full"
                 _placeholder={{ color: "paragraph-color" }}
+                px="1rem"
               />
             </InputGroup>
             <Button variant="primary" size={{ base: "sm", md: "md" }}>

@@ -26,6 +26,7 @@ const styles = {
   global: {
     "html, body": {
       bg: "screen-color",
+      fontFamily: "Eudoxus Sans",
     },
   },
 };

@@ -14,6 +14,7 @@ import Link from "next/link";
 import { AiOutlineShopping } from "react-icons/ai";
 import { BsPerson } from "react-icons/bs";
 import { FaBars } from "react-icons/fa";
+import { useRouter } from "next/router";
 
 const listNav = [
   {
@@ -35,6 +36,7 @@ const listNav = [
 ];
 
 const Navbar: FC = () => {
+  const router = useRouter();
   return (
     <Box
       as="nav"
@@ -73,8 +75,17 @@ const Navbar: FC = () => {
               fontWeight={500}
               fontSize="18px"
               lineHeight="180%"
-              color="text-color"
+              color={router.asPath === item.href ? "main-color" : "text-color"}
               listStyleType="none"
+              _before={{
+                content: "''",
+                position: "absolute",
+                w: router.asPath === item.href ? "4rem" : "0",
+                bg: "main-color",
+                h: "3px",
+                bottom: 0,
+                transition: "0.3s",
+              }}
             >
               <Link href={item.href}>
                 <a>{item.tile}</a>
@@ -87,8 +98,18 @@ const Navbar: FC = () => {
           gap={5}
           display={{ base: "none", md: "flex" }}
         >
-          <Icon fontSize="1.8rem" cursor="pointer" as={AiOutlineShopping} />
-          <Icon fontSize="1.8rem" as={BsPerson} cursor="pointer" />
+          <Icon
+            fontSize="1.8rem"
+            _hover={{ color: "secondary-color" }}
+            cursor="pointer"
+            as={AiOutlineShopping}
+          />
+          <Icon
+            fontSize="1.8rem"
+            as={BsPerson}
+            cursor="pointer"
+            _hover={{ color: "secondary-color" }}
+          />
         </Flex>
         <Icon
           as={FaBars}
