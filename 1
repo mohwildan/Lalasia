@@ -1,0 +1,24 @@
+import { Box } from "@chakra-ui/react";
+import Image from "next/image";
+import { FC, ReactNode } from "react";
+
+
+
+interface TestimonilaSliderContentProps {
+  children: ReactNode;
+  title: string;
+  desc: string;
+  userImg: string;
+  numberStar: string;
+};
+
+const TestimonilaSliderContent: FC<TestimonilaSliderContentProps> = ({ children, title, desc, userImg, numberStar }) => {
+  return (
+    <Box>
+      <Image src={} alt={} />
+    </Box>
+  );
+};
+
+
+export default TestimonilaSliderContent;

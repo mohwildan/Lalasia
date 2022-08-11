@@ -19,7 +19,7 @@ const CardSliderProduct: FC<PropsCardSliderProduct> = ({
 }) => {
   return (
     <Box h="500px">
-      <Image src={img} />
+      <Image src={img} alt={`image ${title}`} />
       <Heading as="h6" variant="H5" color="paragraph-color" mt={4}>
         {badge}
       </Heading>
